@@ -9,7 +9,11 @@ document.querySelector('#myName').innerHTML = myName;
 // Saat - Dakika - Saniye Alma, DOMA'a Ekleme
 
 function showTime () {
-  document.querySelector('#myClock').innerHTML = (`${new Date().getHours()} :${new Date().getMinutes()} :${new Date().getSeconds()}`);
+  document.querySelector('#myClock').innerHTML = (
+    `${new Date().getHours() < 10 ? `0${new Date().getHours()}`: new Date().getHours()} 
+    :${new Date().getMinutes() < 10 ? `0${new Date().getMinutes()}`: new Date().getMinutes()} 
+    :${new Date().getSeconds() < 10 ? `0${new Date().getSeconds()}` : new Date().getSeconds()}`
+  );
 }
 setInterval(showTime, 1000);
 
